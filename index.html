@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prank Page 😈</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial;
+        text-align: center;
+        background: black;
+        color: white;
+      }
+
+      #startBtn {
+        margin-top: 200px;
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        background: red;
+        color: white;
+        border-radius: 10px;
+      }
+
+      #prank {
+        display: none;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #prank img {
+        width: 300px;
+        animation: shake 0.2s infinite;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translate(5px, 5px);
+        }
+        25% {
+          transform: translate(-5px, -5px);
+        }
+        50% {
+          transform: translate(5px, -5px);
+        }
+        75% {
+          transform: translate(-5px, 5px);
+        }
+        100% {
+          transform: translate(5px, 5px);
+        }
+      }
+
+      .flash {
+        animation: flashBg 0.3s infinite;
+      }
+
+      @keyframes flashBg {
+        0% {
+          background: black;
+        }
+        50% {
+          background: red;
+        }
+        100% {
+          background: black;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="startBtn">Click Me 😏</button>
+
+    <div id="prank">
+      <img
+        src="https://media.tenor.com/tJmHowCFhGwAAAAe/cat-smile-smile-filter.png"
+        alt="scary"
+      />
+      <h1>😱 BOOOO!!! 😱</h1>
+    </div>
+
+    <!-- Sound -->
+    <!-- <audio id="sound" src="https://www.myinstants.com/media/sounds/scream.mp3"></audio> -->
+    <audio id="sound" src="scream_chicken_tree.mp3"></audio>
+
+    <script>
+      const btn = document.getElementById("startBtn");
+      const prank = document.getElementById("prank");
+      const sound = document.getElementById("sound");
+
+      btn.addEventListener("click", () => {
+        btn.style.display = "none";
+        prank.style.display = "flex";
+
+        document.body.classList.add("flash");
+
+        // Play sound
+        sound.play();
+      });
+    </script>
+  </body>
+</html>
